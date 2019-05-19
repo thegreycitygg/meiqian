@@ -1,0 +1,210 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>张倩也爱我呢,嘻嘻</title>
+		<link rel="icon" href="images/keke.ico" type="image/x-icon">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/iconfont.css" rel="stylesheet" />
+		<style type="text/css">
+			#alertBtns,#alertBtn,#alertBtnsC{
+				float: left;
+				margin-left: 30px;
+			}
+			#alertBtnsD{
+				margin-left: 30px;
+			}
+			.mui-table-view{
+				margin-top: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="images/m6.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="images/m1.jpg">
+						</a>
+					</div>
+					
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/m2.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/m3.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/m4.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/m5.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="images/m6.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="images/m1.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+	
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+				window.onload = function() {
+				mui.init();
+				mui('body').on('tap','a',function(){
+					document.location.href=this.href;
+				})
+					var gallery = mui('.mui-slider');
+				gallery.slider({
+					interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
+				});
+				var info = document.getElementById("info");
+                document.getElementById("alertBtn").addEventListener('tap', function() {
+                mui.alert('我好爱你呀', '美美', function() {
+                //      info.innerText = '你刚关闭了警告框';
+                });
+                });
+                	var infos = document.getElementById("infos");
+                document.getElementById("alertBtns").addEventListener('tap', function() {
+                mui.alert('我也好爱你呢', '航航', function() {
+                //      info.innerText = '你刚关闭了警告框';
+                });
+                });
+                  	var infosC = document.getElementById("infosC");
+                document.getElementById("alertBtnsC").addEventListener('tap', function() {
+                mui.alert('我娶你吧', '小傻子', function() {
+                //      info.innerText = '你刚关闭了警告框';
+                });
+                });
+                  	var infosD = document.getElementById("infosD");
+                document.getElementById("alertBtnsD").addEventListener('tap', function() {
+                mui.alert('我要嫁给你呀', '大傻子', function() {
+                //      info.innerText = '你刚关闭了警告框';
+                });
+                });
+			}
+			
+		</script>
+	<nav class="mui-bar mui-bar-tab" >
+    <a class="mui-tab-item mui-active" href="index5.html">
+        <span class="mui-icon iconfont icon-bu" style="color:#929292;"></span>
+        <span class="mui-tab-label" style="color:#929292;">I</span>
+    </a>
+    <a class="mui-tab-item"  href="index2.html">
+        <span class="mui-icon iconfont icon-jiandao"></span>
+        <span class="mui-tab-label" >Iove</span>
+    </a>
+    <a class="mui-tab-item" href="index0.html">
+        <span class="mui-icon iconfont  icon-shitou" style="color: #007AFF;"></span>
+        <span class="mui-tab-label" style="color: #007AFF;">You</span>
+    </a>
+</nav>
+<p style="color: red;">在今天这么特殊的日子,我当然得跟我家美美表白呀:</p>
+
+<button style="
+	margin-left: 60px;" id='alertBtn' type="button" class="mui-btn mui-btn-blue mui-btn-outlined">A</button>
+<div id="info"></div>
+<button id='alertBtns' type="button" class="mui-btn mui-btn-blue mui-btn-outlined">B</button>
+<div id="infos"></div>
+<button id='alertBtnsC' type="button" class="mui-btn mui-btn-blue mui-btn-outlined">C</button>
+<div id="infosC"></div>
+<button id='alertBtnsD' type="button" class="mui-btn mui-btn-blue mui-btn-outlined">D</button>
+<div id="infosD"></div>
+
+<ul class="mui-table-view">
+    <li class="mui-table-view-cell mui-collapse">
+        <a class="mui-navigate-right" href="#">美美</a>
+        <div class="mui-collapse-content">
+        
+    </div>
+    </li>
+  <li class="mui-table-view-cell mui-collapse">
+        <a class="mui-navigate-right" href="#">你想我不?</a>
+            <div class="mui-collapse-content">
+             <p>反正我就是想你了</p>
+             <p>为什么呢?</p>
+             <p>爱你呗,小傻子</p>
+             <p>张倩,做我女朋友吧!</p>
+             <p>哈哈</p>
+        </div>
+    </li>
+  
+</ul>
+<ul class="mui-table-view">
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="images/null-56a2f458bbceaca6.jpg">
+            <div class="mui-media-body">
+                美倩
+                <p class='mui-ellipsis'>02825</p>
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="images/m2.jpg">
+            <div class="mui-media-body">
+                二航
+                <p class='mui-ellipsis'>59420</p>
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="images/m4.jpg">
+            <div class="mui-media-body">
+               我爱你
+                <p class='mui-ellipsis'>因为有你,我的世界才会更美好呢.</p>
+            </div>
+        </a>
+    </li>
+        <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="images/m4.jpg">
+            <div class="mui-media-body">
+               我爱你
+                <p class='mui-ellipsis'>因为有你,我的世界才会更美好呢.</p>
+            </div>
+        </a>
+    </li>
+</ul>
+
+	</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>A surprise for meimei</title>
+    <link rel="icon" href="images/keke.ico" type="image/x-icon">
+    <script src="js/mui.min.js"></script>
+    <audio src="images/武汉吉他联盟 哥特 - 《星星小夜曲》-木吉他独奏.mp3" autoplay="autoplay"></audio>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+				* {
+	margin: 0px;
+	padding: 0px;
+	margin: 0px auto;
+}
+h2{
+	/*width: 200px;
+	height: 100px;*/
+}
+#box {
+	width: 280px;
+	height: 300px;
+	margin: 100px auto;
+	margin-left: -40px;
+	/*	position: relative;*/
+	/*border: 1px solid black;*/
+}
+
+#box h4{
+	margin-left: 65px;
+	color: red;
+	font-size: 17px;
+}
+
+#box input {
+	width: 280px;
+	height: 40px;
+	background-color: #DAD294;
+	border-radius: 5px;
+	border: 0.5px solid gainsboro;
+	margin: 10px 40px;
+	color: white;
+	font-weight: bolder;
+	
+}
+
+.pass,
+.text {
+	background-color-opacity: 0.3;
+}
+
+#donghua {
+	/*position: absolute;
+				left: 0px;*/
+/*	position: relative;*/
+}
+
+#donghua p {
+	position: absolute;
+	left: 75px;
+	margin-top: 100px;
+}
+
+body {
+	/*//body外边距设为0；*/
+	margin: 0;
+}
+
+
+
+label {
+	display: block;
+	height: 40px;
+	position: relative;
+	margin: 20px -80px;
+    /*margin-left: 40px;*/
+}
+
+span {
+	position: absolute;
+	float: left;
+	line-height: 60px;
+	left: 70px;
+	color: #BCBCBC;
+	cursor: text;
+	
+}
+
+.input_txt {
+	width: 280px;
+	border: solid 1px #ccc;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1) inset;
+	height: 38px;
+	text-indent: 10px;
+
+	
+	
+}
+
+.input_txt:focus {
+	box-shadow: 0 0 4px rgba(255, 153, 164, 0.8);
+	border: solid 1px #B00000;
+}
+html, body { 
+  width: 100%;
+  height: 100%; 
+  background: #3d2152; 
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}</style>
+
+</head>
+<body>
+
+<script src="js/css-doodle.min.js"></script>
+<css-doodle grid="5">
+  :doodle {
+    @grid: 10 / 100%; 
+  }
+  background: @pick(
+    #ff0198, #8156a8, #ff6d00, #ff75e4
+  );
+
+  transform: translate(
+    @rand(-50vw, 50vw),
+    @rand(-50vh, 50vh)
+  );
+
+  @size: 3.5vmin;
+  @shape: heart;
+  @place-cell: 140% 50%;
+
+  animation-name: explosion;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  animation-duration: calc(@rand(2s, 5s, .1));
+  animation-delay: calc(@rand(-5s, -1s, .1));
+  animation-timing-function: 
+    cubic-bezier(.84, .02, 1, 1);
+
+  @keyframes explosion {
+    0% { opacity: 0; }
+    70% { opacity: 1; }
+    100% { transform: translate(0, 0); }
+  }
+</css-doodle>
+<div id="box">
+			<h4>爱你哟💗</h4>
+		<form class="border_radius" id="keydown">
+         
+         <label><span>Username</span><input type="text" class="input_txt border_radius text" autofocus /></label>
+         <label><span>Password</span><input type="password" class="input_txt border_radius pass" /></label>
+          
+		</form>
+			
+			<a><input type="button" class="button" name="" id="denglv" value="Sign in"style="background-color:#F04F10 ;margin-left: -40px;" /></a>
+		</div>
+		 <div id="donghua">
+         	<p style="color: white;font-size: 15px;">From now on, I'll protect you.</p>
+         	<!--<p style="margin-top: 0px;color: white;font-size: 18px;">遇到你,我真的很幸运.</p>-->
+         </div>
+       
+		 <script type="text/javascript">
+		 	$(function() {
+	$("#keydown .input_txt").each(function() {
+		var thisVal = $(this).val();
+		//判断文本框的值是否为空，有值的情况就隐藏提示语，没有值就显示
+		if(thisVal != "") {
+			$(this).siblings("span").hide();
+		} else {
+			$(this).siblings("span").show();
+		}
+		$(this).keyup(function() {
+			//                           var val=$(this).val();
+			$(this).siblings("span").hide();
+		}).blur(function() {
+			var val = $(this).val();
+			if(val != "") {
+				$(this).siblings("span").hide();
+			} else {
+				$(this).siblings("span").show();
+			}
+		})
+	});
+
+	$(".button").click(function() {
+		if($(".input_txt").val() == "15893429579" && $(".pass").val() == "15966348358") {
+			alert("恭喜您!登录成功");
+			$("a").attr("href", "index5.html");
+
+		} else {
+			alert("密码或账号不对呀!请重新输入:嘿嘿");
+		}
+	});
+
+//	$("p:eq(0)").animate({
+//		"left": "30%"
+//	}, 400);
+//	$("p:eq(1)").animate({
+//		"left": "40%"
+//	}, 200);
+
+});</script>
+
+		<script type="text/javascript" charset="utf-8">
+//			mui.init();
+			//获得slider插件对象
+			var gallery = mui('.mui-slider');
+			gallery.slider({
+				interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+			});
+		</script>
+
+	
+</body>
+</html>
